@@ -1,4 +1,5 @@
 <template>
+<Cart :count="counter"/>
   <nav class="product-filter">
     <div class="sort">
       <div class="collection-sort">
@@ -35,6 +36,7 @@
       v-for="product in filteredProducts"
       :key="product.id"
       :product="product"
+      @addProduct= "setCounter()"
     >
     </Product>
   </section>
@@ -42,14 +44,16 @@
 
 <script>
 import Product from "./Product";
+import Cart from "./Cart";
 import axios from "axios";
 import { groupBy } from "@/composables/utils.js";
 export default {
-  components: { Product },
+  components: { Product, Cart },
   data() {
     return {
       selectedCategory: "--Please choose an option--",
       products: [],
+      counter: 0
     };
   },
   async mounted() {
@@ -78,6 +82,9 @@ export default {
       }
     },
   },
+  methods: { 
+    setCounter() {this.counter++}
+  }
 };
 </script>
 

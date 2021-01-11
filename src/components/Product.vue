@@ -7,6 +7,7 @@
       <h5>{{ product.title }}</h5>
       <h6>{{ product.price }}</h6>
     </div>
+    <button @click="$emit('addProduct')">Add to Cart</button>
   </div>
 </template>
 
