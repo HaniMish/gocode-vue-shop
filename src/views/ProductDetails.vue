@@ -22,7 +22,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      product: [],
+      product: []
     };
   },
   async mounted() {
@@ -35,7 +35,7 @@ export default {
     } catch (error) {
       console.error(error);
     }
-  },
+  }
 };
 </script>
 
