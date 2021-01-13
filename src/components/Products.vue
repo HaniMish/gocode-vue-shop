@@ -1,5 +1,5 @@
 <template>
-<Cart :count="counter"/>
+  <Cart :count="counter" />
   <nav class="product-filter">
     <div class="sort">
       <div class="collection-sort">
@@ -36,7 +36,7 @@
       v-for="product in filteredProducts"
       :key="product.id"
       :product="product"
-      @addProduct= "setCounter()"
+      @addProduct="setCounter()"
     >
     </Product>
   </section>
@@ -69,7 +69,7 @@ export default {
     categories() {
       return [
         "--Please choose an option--",
-        ...Object.keys(groupBy(this.products, "category")),
+        ...Object.keys(groupBy(this.products, "category"))
       ];
     },
     filteredProducts() {
@@ -77,16 +77,17 @@ export default {
         return this.products;
       else {
         return this.products.filter(
-          (product) => product.category === this.selectedCategory
+          product => product.category === this.selectedCategory
         );
       }
-    },
+    }
   },
-  methods: { 
-    setCounter() {this.counter++}
+  methods: {
+    setCounter() {
+      this.counter++;
+    }
   }
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

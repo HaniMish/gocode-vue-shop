@@ -1,15 +1,13 @@
 <template>
-    <h1>VUE Shop</h1>
+  <h1>VUE Shop</h1>
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
 <style scoped>
 h1 {
-    font-size: 24px;
+  font-size: 24px;
 }
 </style>

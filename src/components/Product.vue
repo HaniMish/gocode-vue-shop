@@ -1,5 +1,5 @@
 <template>
-  <div class="product-card">
+  <router-link :to="`/ProductDetails/${product.id}`" class="product-card">
     <div class="product-image">
       <img :src="product.image" :alt="product.title" />
     </div>
@@ -8,14 +8,13 @@
       <h6>{{ product.price }}</h6>
     </div>
     <button @click="$emit('addProduct')">Add to Cart</button>
-  </div>
+  </router-link>
 </template>
 
 <script>
 export default {
-  props: ['product'],
+  props: ["product"]
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
